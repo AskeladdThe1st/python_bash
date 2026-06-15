@@ -3,7 +3,7 @@ import sys
 
 def test_live_api():
     print("🔍 Running live API test...")
-    url = "http://127.0.0.1:8000/register"
+    url = "http://host.docker.internal:8000/register"
     try:
         response = requests.get(url)
 
