@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+spec:
+  replicas: 3 # Tells Kubernetes to always keep 3 copies running
+  selector:
+    matchLabels:
+      app: chaos-python-app
+  template:
+    metadata:
+      labels:
+        app: chaos-python-app
+    spec:
+      containers:
+      - name: python-container
+        image: localhost:5000/python-devsecops-registry:latest
+        ports:
+        - containerPort: 8080
