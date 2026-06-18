@@ -4,12 +4,12 @@ metadata:
   name: python-app-deployment
 spec:
   replicas: 3 # Tells Kubernetes to always keep 3 copies running
-  selector:
+  selector: # The selector is how the deployment finds which pods to manage
     matchLabels:
       app: chaos-python-app
-  template:
-    metadata:
-      labels:
+  template: # The template is the blueprint for the pods that will be created
+    metadata: 
+      labels: # The labels are used to identify the pods that belong to this deployment
         app: chaos-python-app
     spec:
       containers:
