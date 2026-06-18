@@ -3,7 +3,7 @@ FROM jenkins/jenkins:lts
 USER root
 
 # 1. Install standard utilities and bake flake8 right into /usr/bin/
-RUN apt-get update && apt-get install -y python3 python3-pip wget flake8
+RUN apt-get update && apt-get install -y python3 python3-pip wget flake8 docker.io
 
 # 2. Download and extract Gitleaks
 RUN wget https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
