@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: python-app-deployment
 spec:
-  replicas: 3 # Tells Kubernetes to always keep 3 copies runihng
+  replicas: 3 # Tells Kubernetes to always keep 3 copies running
   selector: # The selector is how the deployment finds which pods to manage
     matchLabels:
       app: python-app
