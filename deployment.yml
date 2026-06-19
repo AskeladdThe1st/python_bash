@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: python-container
-        image: localhost:5000/python-devsecops-registry/python-app:latest
+        image: localhost:5001/python-devsecops-registry/python-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
