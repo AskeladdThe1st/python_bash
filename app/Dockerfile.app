@@ -6,7 +6,7 @@ WORKDIR /app
 RUN pip install fastapi uvicorn requests --break-system-packages
 
 # Copy your python files into the container
-COPY security_scan.py test_app.py main.py ./
+COPY app/security_scan.py app/test_app.py app/main.py ./
 
 # EXPOSE the port your API runs on (usually 8000)
 EXPOSE 8000
