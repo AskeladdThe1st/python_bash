@@ -15,7 +15,8 @@ spec:
       containers:
       - name: python-container
         image: 192.168.1.56:5000/python-devsecops-registry/python-app:latest
+        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
       imagePullSecrets:
       - name: nexus-auth
