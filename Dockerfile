@@ -16,4 +16,7 @@ RUN chmod +x /usr/bin/gitleaks
 # 4. Clean up the archive
 RUN rm gitleaks_8.30.1_linux_x64.tar.gz
 
+# 5. Fix Docker socket permissions by grouping the jenkins user
+RUN usermod -aG docker,root jenkins
+
 USER jenkins
