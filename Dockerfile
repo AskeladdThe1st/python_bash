@@ -16,12 +16,11 @@ RUN chmod +x /usr/bin/gitleaks
 # 4. Clean up the archive
 RUN rm gitleaks_8.30.1_linux_x64.tar.gz
 
-# 🎛️ NEW: Bake the Nexus Registry Certificate Trust right into the image
+# 5. Reach into the outside folder for the cert
 RUN mkdir -p /etc/docker/certs.d/192.168.1.56:5001
-# Change line 21 to look like this:
-COPY --from=nexus-proxy registry.crt /etc/docker/certs.d/192.168.1.56:5001/ca.crt
+COPY nexus-proxy/registry.crt /etc/docker/certs.d/192.168.1.56:5001/ca.crt
 
-# 5. Fix Docker socket permissions by grouping the jenkins user
+# 6. Fix Docker socket permissions by grouping the jenkins user
 RUN usermod -aG docker,root jenkins
 
 USER jenkins
