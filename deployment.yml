@@ -9,7 +9,7 @@ spec:
       app: python-app
   template: # The template is the blueprint for the pods that will be created
     metadata: 
-      labels: # The labels are used to identify the pods that belong to this deploymen
+      labels: # The labels are used to identify the pods that belong to this deployment
         app: python-app
     spec:
       containers:
