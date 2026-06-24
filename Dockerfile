@@ -16,6 +16,12 @@ RUN chmod +x /usr/bin/gitleaks
 # 4. Clean up the archive
 RUN rm gitleaks_8.30.1_linux_x64.tar.gz
 
+# ====================================================================
+# NEW: Download and install kubectl so Jenkins can talk to your cluster
+# ====================================================================
+RUN wget -O /usr/bin/kubectl "https://dl.k8s.io/release/v1.30.0/bin/linux/amd64/kubectl" \
+    && chmod +x /usr/bin/kubectl
+
 # 5. Reach into the outside folder for the cert
 RUN mkdir -p /etc/docker/certs.d/192.168.1.56:5001
 COPY nexus-proxy/registry.crt /etc/docker/certs.d/192.168.1.56:5001/ca.crt

@@ -30,5 +30,10 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Kubernetes Cluster ☸️') {
+            steps {
+                sh 'kubectl apply -f deployment.yml'
+            }
+        }
     }
 }
